@@ -1,6 +1,6 @@
 
 const USER_FIELDS = ["name", "uid", "emoji", "color"]
-const APP_NAME = "KATESPLANETPALACE"
+const APP_NAME = "DUPLEX"
 
 
 //==============================================
