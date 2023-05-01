@@ -1,0 +1,108 @@
+
+/*https://stackoverflow.com/questions/7439042/css-js-to-prevent-dragging-of-ghost-image*/
+img {
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+}
+
+/*https://www.tilingtextures.com/light-cork-board/*/
+/*https://www.toptal.com/designers/subtlepatterns/retina-wood/*/
+html,body {
+	background-image: url("img/retina_wood.png");
+	background-repeat: repeat;
+	font-family: basic, sans-serif;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+
+
+h1, h2, h3, h4 {
+	margin: 0px;
+}
+
+body {
+	flex-direction: column;
+	display: flex;
+}
+
+
+.uid {
+	background-color: hsla(190, 100%, 50%, .4);
+	color: hsla(190, 100%, 30%, 1);
+	padding: 1px 3px;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, .3);
+	font-family: monospace;
+	font-weight: bold;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+}
+
+.column {
+	margin: 10px;
+	flex: 1;
+	background-color: hsla(190, 100%, 80%, .4);
+	padding: 1px 3px;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, .3);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+}
+
+.columns {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+}
+
+.section {
+	display: inline-block;
+	margin: 10px;
+	background-color: hsla(190, 100%, 80%, .4);
+	padding: 1px 3px;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, .3);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+}
+
+.space-app {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+
+.user-planet {
+  
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  border-radius: 100px;
+  box-shadow: inset 1px 1px 22px rgba(0, 0, 0, .2);
+}
+
+
+.message-star {
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 100px;
+  box-shadow: inset 1px 1px 22px rgba(0, 0, 0, .2);
+}
+
+.post-ui {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: white;
+}
