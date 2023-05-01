@@ -49,6 +49,7 @@ window.onload = function(e) {
 
 	let userList = new UserList(db)
 
+	let auth = firebase.auth()
 	// Is there an override for uid
 	if (PARAMS["uid"] !== null) {
 		console.log( PARAMS["uid"])
@@ -58,7 +59,7 @@ window.onload = function(e) {
 		// Do authentication
 		// Ignore if we have a test uid
 
-		firebase.auth().onAuthStateChanged((newAuthData) => {
+		auth.onAuthStateChanged((newAuthData) => {
 
 			if (newAuthData) {
 				// User is signed in, see docs for a list of available properties
@@ -158,7 +159,7 @@ window.onload = function(e) {
             
       <!-- posting UI -->
       <div class="post-ui">
-        <button @click="makePlanetPost">POST</button>
+        <button @click="makePlanetPost">Sign in with google</button>
       </div>
 		</div>`,
 
@@ -186,6 +187,15 @@ window.onload = function(e) {
 		},
 
 		methods: {
+
+			async googleSignIn () {
+				try {
+					const prov = new firebase.auth.GoogleAuthProvider()
+					await auth.signInWithPopup(prov)
+				} catch (error) {
+					console.log(error)
+				}
+			},
       
       
       messageStyle(message) {
@@ -204,7 +214,7 @@ window.onload = function(e) {
           text: "I'm a planet",
           x: Math.random()*500,
           y: Math.random()*300,
-           imgURL: "https://nssdc.gsfc.nasa.gov/planetary/mars/image/mars.gif"
+           imgURL: "desireImage.png"
         })
       },
       
@@ -267,6 +277,7 @@ window.onload = function(e) {
 
 
 		mounted() {
+
 
 			// Keep this
 			this.subscribeToMessages()
